@@ -1,0 +1,483 @@
+{
+    "info": {
+        "name": "My Project",
+        "description": "",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Raíz",
+            "description": "",
+            "item": [
+                {
+                    "name": "Raven",
+                    "description": "",
+                    "item": [
+                        {
+                            "name": "/employee",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {},
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"id\": 1,\n\t\"primerNombre\": \"Edgar\",\n\t\"segundoNombre\": \"\",\n\t\"primerApellido\": \"Octaviano\",\n\t\"segundoApellido\": \"Gonzalez\",\n\t\"edad\": \"55\",\n\t\"sexo\": \"M\",\n\t\"fechaNacimiento\": \"10-JUN-1999\",\n\t\"puesto\": \"Tech Lead\",\n\t\"fechaAlta\": \"20-05-2026\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json",
+                                        "description": "",
+                                        "type": "string"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "http://localhost:8080/raven/rh/employee",
+                                    "path": [
+                                        "raven",
+                                        "rh",
+                                        "employee"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "8080",
+                                    "query": [],
+                                    "variable": []
+                                }
+                            },
+                            "response": [
+                                {
+                                    "name": "Éxito",
+                                    "originalRequest": {
+                                        "method": "POST",
+                                        "header": [
+                                            {
+                                                "key": "Content-Type",
+                                                "value": "application/json",
+                                                "description": "",
+                                                "disabled": false
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "http://localhost:8080/raven/rh/employee",
+                                            "path": [
+                                                "raven",
+                                                "rh",
+                                                "employee"
+                                            ],
+                                            "host": [
+                                                "localhost"
+                                            ],
+                                            "protocol": "http",
+                                            "port": "8080",
+                                            "query": [],
+                                            "variable": []
+                                        },
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\n    \"id\": 1,\n\t\"primerNombre\": \"Edgar\",\n\t\"segundoNombre\": \"\",\n\t\"primerApellido\": \"Octaviano\",\n\t\"segundoApellido\": \"Gonzalez\",\n\t\"edad\": \"55\",\n\t\"sexo\": \"M\",\n\t\"fechaNacimiento\": \"10-JUN-1999\",\n\t\"puesto\": \"Tech Lead\",\n\t\"fechaAlta\": \"20-05-2026\"\n}",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "cookie": []
+                                }
+                            ],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        },
+                        {
+                            "name": "/employees",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {},
+                                "method": "GET",
+                                "body": {},
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:8080/raven/rh/employees",
+                                    "path": [
+                                        "raven",
+                                        "rh",
+                                        "employees"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "8080",
+                                    "query": [],
+                                    "variable": []
+                                }
+                            },
+                            "response": [
+                                {
+                                    "name": "Éxito",
+                                    "originalRequest": {
+                                        "method": "GET",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "http://localhost:8080/raven/rh/employees",
+                                            "path": [
+                                                "raven",
+                                                "rh",
+                                                "employees"
+                                            ],
+                                            "host": [
+                                                "localhost"
+                                            ],
+                                            "protocol": "http",
+                                            "port": "8080",
+                                            "query": [],
+                                            "variable": []
+                                        },
+                                        "body": {}
+                                    },
+                                    "cookie": []
+                                }
+                            ],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        },
+                        {
+                            "name": "/employee/{id}",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {},
+                                "method": "GET",
+                                "body": {},
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:8080/raven/rh/employee/1",
+                                    "path": [
+                                        "raven",
+                                        "rh",
+                                        "employee",
+                                        "1"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "8080",
+                                    "query": [],
+                                    "variable": []
+                                }
+                            },
+                            "response": [
+                                {
+                                    "name": "Éxito",
+                                    "originalRequest": {
+                                        "method": "GET",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "http://localhost:8080/raven/rh/employee/1",
+                                            "path": [
+                                                "raven",
+                                                "rh",
+                                                "employee",
+                                                "1"
+                                            ],
+                                            "host": [
+                                                "localhost"
+                                            ],
+                                            "protocol": "http",
+                                            "port": "8080",
+                                            "query": [],
+                                            "variable": []
+                                        },
+                                        "body": {}
+                                    },
+                                    "cookie": []
+                                }
+                            ],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        },
+                        {
+                            "name": "/employee/{id}",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {},
+                                "method": "PUT",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"id\": 1,\n\t\"primerNombre\": \"Edgar\",\n\t\"segundoNombre\": \"\",\n\t\"primerApellido\": \"Octaviano\",\n\t\"segundoApellido\": \"Gonzalez\",\n\t\"edad\": \"27\",\n\t\"sexo\": \"M\",\n\t\"fechaNacimiento\": \"26-MAR-1999\",\n\t\"puesto\": \"Tech Lead\",\n\t\"fechaAlta\": \"20-05-2026\",\n    \"estatus\": \"inactivo\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json",
+                                        "description": "",
+                                        "type": "string"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "http://localhost:8080/raven/rh/employee/1",
+                                    "path": [
+                                        "raven",
+                                        "rh",
+                                        "employee",
+                                        "1"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "8080",
+                                    "query": [],
+                                    "variable": []
+                                }
+                            },
+                            "response": [
+                                {
+                                    "name": "Éxito",
+                                    "originalRequest": {
+                                        "method": "PUT",
+                                        "header": [
+                                            {
+                                                "key": "Content-Type",
+                                                "value": "application/json",
+                                                "description": "",
+                                                "disabled": false
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "http://localhost:8080/raven/rh/employee/1",
+                                            "path": [
+                                                "raven",
+                                                "rh",
+                                                "employee",
+                                                "1"
+                                            ],
+                                            "host": [
+                                                "localhost"
+                                            ],
+                                            "protocol": "http",
+                                            "port": "8080",
+                                            "query": [],
+                                            "variable": []
+                                        },
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\n    \"id\": 1,\n\t\"primerNombre\": \"Edgar\",\n\t\"segundoNombre\": \"\",\n\t\"primerApellido\": \"Octaviano\",\n\t\"segundoApellido\": \"Gonzalez\",\n\t\"edad\": \"27\",\n\t\"sexo\": \"M\",\n\t\"fechaNacimiento\": \"26-MAR-1999\",\n\t\"puesto\": \"Tech Lead\",\n\t\"fechaAlta\": \"20-05-2026\",\n    \"estatus\": \"inactivo\"\n}",
+                                            "options": {
+                                                "raw": {
+                                                    "language": "json"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "cookie": []
+                                }
+                            ],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        },
+                        {
+                            "name": "/employe/{id}",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {},
+                                "method": "DELETE",
+                                "body": {},
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:8080/raven/rh/employee/1",
+                                    "path": [
+                                        "raven",
+                                        "rh",
+                                        "employee",
+                                        "1"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "8080",
+                                    "query": [],
+                                    "variable": []
+                                }
+                            },
+                            "response": [
+                                {
+                                    "name": "Éxito",
+                                    "originalRequest": {
+                                        "method": "DELETE",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "http://localhost:8080/raven/rh/employee/1",
+                                            "path": [
+                                                "raven",
+                                                "rh",
+                                                "employee",
+                                                "1"
+                                            ],
+                                            "host": [
+                                                "localhost"
+                                            ],
+                                            "protocol": "http",
+                                            "port": "8080",
+                                            "query": [],
+                                            "variable": []
+                                        },
+                                        "body": {}
+                                    },
+                                    "cookie": []
+                                }
+                            ],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        },
+                        {
+                            "name": "/status",
+                            "description": "",
+                            "event": [],
+                            "auth": {},
+                            "request": {
+                                "auth": {},
+                                "method": "GET",
+                                "body": {},
+                                "header": [],
+                                "url": {
+                                    "raw": "http://localhost:8080/raven/rh/status",
+                                    "path": [
+                                        "raven",
+                                        "rh",
+                                        "status"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "protocol": "http",
+                                    "port": "8080",
+                                    "query": [],
+                                    "variable": []
+                                }
+                            },
+                            "response": [
+                                {
+                                    "name": "Éxito",
+                                    "originalRequest": {
+                                        "method": "GET",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "http://localhost:8080/raven/rh/status",
+                                            "path": [
+                                                "raven",
+                                                "rh",
+                                                "status"
+                                            ],
+                                            "host": [
+                                                "localhost"
+                                            ],
+                                            "protocol": "http",
+                                            "port": "8080",
+                                            "query": [],
+                                            "variable": []
+                                        },
+                                        "body": {}
+                                    },
+                                    "cookie": []
+                                }
+                            ],
+                            "protocolProfileBehavior": {
+                                "strictSSL": false,
+                                "followRedirects": true
+                            }
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "exec": [
+                                    ""
+                                ],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        },
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    ""
+                                ],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        }
+                    ],
+                    "auth": {}
+                }
+            ],
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "exec": [],
+                        "type": "text/javascript",
+                        "packages": {}
+                    }
+                },
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [],
+                        "type": "text/javascript",
+                        "packages": {}
+                    }
+                }
+            ],
+            "auth": {}
+        }
+    ],
+    "variable": [],
+    "event": [],
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "feGblsGnAV4a0VFphTox3OSW2m3I",
+                "type": "string"
+            }
+        ]
+    }
+}
