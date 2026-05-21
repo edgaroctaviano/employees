@@ -16,11 +16,11 @@ import com.raven.employees.models.Employee;
 import com.raven.employees.repository.IEmployeeRepository1;
 
 @Repository
-<span class="fc" id="L19">public class EmployeesRepositoryImpl implements IEmployeeRepository1 {</span>
+<span class="nc" id="L19">public class EmployeesRepositoryImpl implements IEmployeeRepository1 {</span>
 
-<span class="fc" id="L21">	String jdbcUrl = &quot;jdbc:h2:mem:testdb&quot;; // Cambia a tu ruta o :mem: si es en memoria</span>
-<span class="fc" id="L22">	String usuario = &quot;sa&quot;;</span>
-<span class="fc" id="L23">	String contrasena = &quot;password&quot;;</span>
+<span class="nc" id="L21">	String jdbcUrl = &quot;jdbc:h2:mem:testdb&quot;; // Cambia a tu ruta o :mem: si es en memoria</span>
+<span class="nc" id="L22">	String usuario = &quot;sa&quot;;</span>
+<span class="nc" id="L23">	String contrasena = &quot;password&quot;;</span>
 
 	@Override
 	public Optional&lt;Employee&gt; findBySegundoApellido(String nombre) {
@@ -31,10 +31,10 @@ import com.raven.employees.repository.IEmployeeRepository1;
 <span class="nc" id="L31">			ResultSet rs = stmt.executeQuery(&quot;SELECT * FROM Employee where PRIMER_NOMBRE = '&quot; + nombre + &quot;'&quot;);</span>
 <span class="nc bnc" id="L32" title="All 2 branches missed.">			while (rs.next()) {</span>
 
-<span class="nc" id="L34">				res = new Employee(NumberUtils.parseNumber(rs.getString(&quot;ID&quot;), Long.class), rs.getString(&quot;EDAD&quot;),</span>
-<span class="nc" id="L35">						rs.getString(&quot;ESTATUS&quot;), rs.getString(&quot;FECHA_ALTA&quot;), rs.getString(&quot;FECHA_NACIMIENTO&quot;),</span>
-<span class="nc" id="L36">						rs.getString(&quot;PRIMER_APELLIDO&quot;), rs.getString(&quot;PRIMER_NOMBRE&quot;), rs.getString(&quot;PUESTO&quot;),</span>
-<span class="nc" id="L37">						rs.getString(&quot;SEGUNDO_APELLIDO&quot;), rs.getString(&quot;SEGUNDO_NOMBRE&quot;), rs.getString(&quot;SEXO&quot;));</span>
+<span class="nc" id="L34">				res = new Employee(NumberUtils.parseNumber(rs.getString(&quot;ID&quot;), Long.class), rs.getString(&quot;PRIMER_NOMBRE&quot;),</span>
+<span class="nc" id="L35">						rs.getString(&quot;SEGUNDO_NOMBRE&quot;), rs.getString(&quot;PRIMER_APELLIDO&quot;), rs.getString(&quot;SEGUNDO_APELLIDO&quot;),</span>
+<span class="nc" id="L36">						rs.getString(&quot;EDAD&quot;), rs.getString(&quot;SEXO&quot;), rs.getString(&quot;FECHA_NACIMIENTO&quot;),</span>
+<span class="nc" id="L37">						rs.getString(&quot;PUESTO&quot;), rs.getString(&quot;FECHA_ALTA&quot;), rs.getString(&quot;ESTATUS&quot;));</span>
 			}
 <span class="nc" id="L39">			return Optional.of(res);</span>
 

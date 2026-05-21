@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EmployeesServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">employees</a> &gt; <a href="index.source.html" class="el_package">com.raven.employees.service.impl</a> &gt; <span class="el_source">EmployeesServiceImpl.java</span></div><h1>EmployeesServiceImpl.java</h1><pre class="source lang-java linenums">package com.raven.employees.service.impl;
 
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -29,82 +31,85 @@ public class EmployeesServiceImpl implements IEmployeesService {
 	@Autowired
 	public Validations vali;
 
-<span class="fc" id="L32">	private static final Logger logger = LoggerFactory.getLogger(EmployeesServiceImpl.class);</span>
+<span class="fc" id="L34">	private static final Logger logger = LoggerFactory.getLogger(EmployeesServiceImpl.class);</span>
 
-<span class="fc" id="L34">	public EmployeesServiceImpl(IEmployeesRepository repository, IEmployeeRepository1 repo, Validations vali) {</span>
-<span class="fc" id="L35">		this.repository = repository;</span>
-<span class="fc" id="L36">		this.repo = repo;</span>
-<span class="fc" id="L37">		this.vali = vali;</span>
-<span class="fc" id="L38">	}</span>
+<span class="fc" id="L36">	public EmployeesServiceImpl(IEmployeesRepository repository, IEmployeeRepository1 repo, Validations vali) {</span>
+<span class="fc" id="L37">		this.repository = repository;</span>
+<span class="fc" id="L38">		this.repo = repo;</span>
+<span class="fc" id="L39">		this.vali = vali;</span>
+<span class="fc" id="L40">	}</span>
 
 	@Override
 	public List&lt;Employee&gt; getEmployees() {
-<span class="fc" id="L42">		logger.info(&quot;Obtiene empleados&quot;);</span>
-<span class="fc" id="L43">		Iterable&lt;Employee&gt; res = repository.findAll();</span>
-<span class="fc" id="L44">		List&lt;Employee&gt; list = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L45">		res.forEach(list::add);</span>
-<span class="fc bfc" id="L46" title="All 2 branches covered.">		if (list.size() == 0) {</span>
-<span class="fc" id="L47">			logger.info(&quot;Lista vacia&quot;);</span>
-<span class="fc" id="L48">			throw new GenericException(List.of(&quot;No hay empleados&quot;), EnumHttpMessages.E404);</span>
+<span class="fc" id="L44">		logger.info(&quot;Obtiene empleados&quot;);</span>
+<span class="fc" id="L45">		Iterable&lt;Employee&gt; res = repository.findAll();</span>
+<span class="fc" id="L46">		List&lt;Employee&gt; list = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L47">		res.forEach(list::add);</span>
+<span class="fc bfc" id="L48" title="All 2 branches covered.">		if (list.size() == 0) {</span>
+<span class="fc" id="L49">			logger.info(&quot;Lista vacia&quot;);</span>
+<span class="fc" id="L50">			throw new GenericException(List.of(&quot;No hay empleados&quot;), EnumHttpMessages.E404);</span>
 		}
 
-<span class="fc" id="L51">		return (List&lt;Employee&gt;) repository.findAll();</span>
+<span class="fc" id="L53">		return (List&lt;Employee&gt;) repository.findAll();</span>
 	}
 
 	@Override
 	public Optional&lt;Employee&gt; getEmployee(String idEmployee) {
 
-<span class="fc" id="L57">		logger.info(&quot;Obtiene empleado&quot;);</span>
-<span class="fc bfc" id="L58" title="All 2 branches covered.">		if (vali.searchType(idEmployee)) {</span>
-<span class="fc" id="L59">			logger.info(&quot;Busqueda por id&quot;);</span>
-<span class="fc" id="L60">			Optional&lt;Employee&gt; res = repository.findById(NumberUtils.parseNumber(idEmployee, Long.class));</span>
-<span class="fc bfc" id="L61" title="All 2 branches covered.">			if (res.isEmpty()) {</span>
-<span class="fc" id="L62">				logger.info(&quot;No se encontró &quot; + idEmployee);</span>
-<span class="fc" id="L63">				throw new GenericException(List.of(&quot;Empleado no existe&quot;), EnumHttpMessages.E404);</span>
+<span class="fc" id="L59">		logger.info(&quot;Obtiene empleado&quot;);</span>
+<span class="fc bfc" id="L60" title="All 2 branches covered.">		if (vali.searchType(idEmployee)) {</span>
+<span class="fc" id="L61">			logger.info(&quot;Busqueda por id&quot;);</span>
+<span class="fc" id="L62">			Optional&lt;Employee&gt; res = repository.findById(NumberUtils.parseNumber(idEmployee, Long.class));</span>
+<span class="fc bfc" id="L63" title="All 2 branches covered.">			if (res.isEmpty()) {</span>
+<span class="fc" id="L64">				logger.info(&quot;No se encontró &quot; + idEmployee);</span>
+<span class="fc" id="L65">				throw new GenericException(List.of(&quot;Empleado no existe&quot;), EnumHttpMessages.E404);</span>
 			}
-<span class="fc" id="L65">			return res;</span>
+<span class="fc" id="L67">			return res;</span>
 		}
 		//
 		else {
 
-<span class="fc" id="L70">			logger.info(&quot;Busqueda por nombre&quot;);</span>
-<span class="fc" id="L71">			return repo.findBySegundoApellido(idEmployee);</span>
+<span class="fc" id="L72">			logger.info(&quot;Busqueda por nombre&quot;);</span>
+<span class="fc" id="L73">			return repo.findBySegundoApellido(idEmployee);</span>
 		}
 	}
 
 	@Override
 	public Object setEmployee(Employee user) {
-<span class="fc" id="L77">		logger.info(&quot;Guarda empleado&quot;);</span>
-<span class="fc bfc" id="L78" title="All 2 branches covered.">		if (!repository.findById(user.getId()).isEmpty()) {</span>
-<span class="fc" id="L79">			logger.info(&quot;Ya existe en la base&quot;);</span>
-<span class="fc" id="L80">			throw new GenericException(List.of(&quot;Empleado existente&quot;), EnumHttpMessages.E500);</span>
+<span class="fc" id="L79">		logger.info(&quot;Guarda empleado&quot;);</span>
+<span class="fc" id="L80">		vali.dateFormat(user.getFechaNacimiento());</span>
+<span class="fc bfc" id="L81" title="All 2 branches covered.">		if (!repository.findById(user.getId()).isEmpty()) {</span>
+<span class="fc" id="L82">			logger.info(&quot;Ya existe en la base&quot;);</span>
+<span class="fc" id="L83">			throw new GenericException(List.of(&quot;Empleado existente&quot;), EnumHttpMessages.E500);</span>
 		}
 		//
 		else {
-<span class="fc" id="L84">			logger.info(&quot;Se asigna por default activo&quot;);</span>
-<span class="fc" id="L85">			user.setEstatus(&quot;activo&quot;);</span>
-<span class="fc" id="L86">			return repository.save(user);</span>
+<span class="fc" id="L87">			logger.info(&quot;Se asigna por default activo&quot;);</span>
+<span class="fc" id="L88">			user.setEstatus(&quot;activo&quot;);</span>
+<span class="fc" id="L89">			user.setFechaAlta(Timestamp.from(Instant.now()).toString());</span>
+<span class="fc" id="L90">			return repository.save(user);</span>
 		}
 	}
 
 	@Override
 	public Employee updateEmployee(String idEmployee, Employee body) {
-<span class="fc" id="L92">		logger.info(&quot;Actualiza empleado&quot;);</span>
-<span class="fc" id="L93">		this.getEmployee(idEmployee);</span>
-<span class="fc" id="L94">		logger.info(&quot;Elimina el regitro&quot;);</span>
-<span class="fc" id="L95">		repository.deleteById(NumberUtils.parseNumber(idEmployee, Long.class));</span>
-<span class="fc" id="L96">		logger.info(&quot;Lo vuelve a insertar&quot;);</span>
-<span class="fc" id="L97">		return repository.save(body);</span>
+<span class="fc" id="L96">		logger.info(&quot;Actualiza empleado&quot;);</span>
+<span class="fc" id="L97">		vali.dateFormat(body.getFechaNacimiento());</span>
+<span class="fc" id="L98">		this.getEmployee(idEmployee);</span>
+<span class="fc" id="L99">		logger.info(&quot;Elimina el regitro&quot;);</span>
+<span class="fc" id="L100">		repository.deleteById(NumberUtils.parseNumber(idEmployee, Long.class));</span>
+<span class="fc" id="L101">		logger.info(&quot;Lo vuelve a insertar&quot;);</span>
+<span class="fc" id="L102">		return repository.save(body);</span>
 	}
 
 	@Override
 	public void deleteEmployee(String idEmployee) {
-<span class="fc" id="L102">		logger.info(&quot;Elimina el empleado&quot;);</span>
-<span class="fc" id="L103">		this.getEmployee(idEmployee);</span>
-<span class="fc" id="L104">		logger.info(&quot;Elimina id &quot; + idEmployee);</span>
-<span class="fc" id="L105">		repository.deleteById(NumberUtils.parseNumber(idEmployee, Long.class));</span>
+<span class="fc" id="L107">		logger.info(&quot;Elimina el empleado&quot;);</span>
+<span class="fc" id="L108">		this.getEmployee(idEmployee);</span>
+<span class="fc" id="L109">		logger.info(&quot;Elimina id &quot; + idEmployee);</span>
+<span class="fc" id="L110">		repository.deleteById(NumberUtils.parseNumber(idEmployee, Long.class));</span>
 
-<span class="fc" id="L107">	}</span>
+<span class="fc" id="L112">	}</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

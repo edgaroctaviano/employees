@@ -30,7 +30,7 @@ public class EmployeesController {
 <span class="fc" id="L30">		this.service = service;</span>
 <span class="fc" id="L31">	}</span>
 
-	@PostMapping(&quot;/employee&quot;)
+	@PostMapping(&quot;/employees&quot;)
 	public ResponseEntity&lt;GenericResponse&gt; postEmployees(@Valid @RequestBody Employee body) {
 
 <span class="fc" id="L36">		return ResponseEntity.status(201).body(new GenericResponse(service.setEmployee(body)));</span>
@@ -42,19 +42,19 @@ public class EmployeesController {
 <span class="fc" id="L42">		return new GenericResponse(service.getEmployees());</span>
 	}
 
-	@GetMapping(&quot;/employee/{id}&quot;)
+	@GetMapping(&quot;/employees/{id}&quot;)
 	public GenericResponse getEmployee(@Valid @PathVariable String id) {
 
 <span class="fc" id="L48">		return new GenericResponse(service.getEmployee(id));</span>
 	}
 
-	@PutMapping(&quot;/employee/{id}&quot;)
+	@PutMapping(&quot;/employees/{id}&quot;)
 	public ResponseEntity&lt;GenericResponse&gt; putEmployees(@PathVariable String id, @Valid @RequestBody Employee body) {
 
 <span class="fc" id="L54">		return ResponseEntity.status(200).body(new GenericResponse(service.updateEmployee(id, body)));</span>
 	}
 
-	@DeleteMapping(&quot;/employee/{id}&quot;)
+	@DeleteMapping(&quot;/employees/{id}&quot;)
 	public GenericResponse deleteEmployees(@PathVariable String id) {
 <span class="fc" id="L59">		service.deleteEmployee(id);</span>
 <span class="fc" id="L60">		ResponseEntity.status(200);</span>

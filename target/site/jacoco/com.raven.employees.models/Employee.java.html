@@ -38,13 +38,13 @@ public class Employee {
 	@NotNull(message = &quot;El campo puesto es requerido&quot;)
 	@NotEmpty
 	private String puesto;
-	@NotNull(message = &quot;El campo fechaAlta es requerido&quot;)
-	@NotEmpty
 	private String fechaAlta;
 	private String estatus;
+
 	public Employee() {
-<span class="fc" id="L46">		super();</span>
-<span class="fc" id="L47">	}</span>
+<span class="fc" id="L45">		super();</span>
+<span class="fc" id="L46">	}</span>
+
 	public Employee(Long id, String primerNombre, String segundoNombre, String primerApellido, String segundoApellido,
 			String edad, String sexo, String fechaNacimiento, String puesto, String fechaAlta, String estatus) {
 <span class="fc" id="L50">		super();</span>
@@ -60,9 +60,6 @@ public class Employee {
 <span class="fc" id="L60">		this.fechaAlta = fechaAlta;</span>
 <span class="fc" id="L61">		this.estatus = estatus;</span>
 <span class="fc" id="L62">	}</span>
-	
-	
-	
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
